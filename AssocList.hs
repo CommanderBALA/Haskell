@@ -38,6 +38,8 @@ instance Num AssocValue where
 
 data AssocList key = AssocNil | AssocCons (key,AssocValue) (AssocList key)
 
+infixr 5 `AssocCons`
+
 instance (Show key) => Show (AssocList key) where
     show AssocNil = "{}"
     show assoc = '{' : showAssoc assoc
